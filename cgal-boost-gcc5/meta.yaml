@@ -1,0 +1,24 @@
+package:
+  name: cgal-boost-gcc5
+  version: 4.8.1
+
+source:
+  git_url: https://github.com/CGAL/cgal
+  git_rev: releases/CGAL-4.8.1
+
+requirements:
+  build:
+    - gcc-5
+    - cmake
+    - boost1-gcc5
+
+  run:
+    - libgcc-5
+    - boost1-gcc5
+
+build:
+  number: 1
+
+about:
+  home: http://www.cgal.org
+  license: GPL

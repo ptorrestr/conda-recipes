@@ -1,0 +1,42 @@
+{% set version = "2.18" %}
+
+package:
+  name: graph-tool
+  version: {{ version }}
+
+source:
+  git_url: https://github.com/count0/graph-tool
+  git_rev: release-{{ version }}
+
+requirements:
+  build:
+    - python
+    - boost1-gcc5
+    - zlib
+    - gcc-5
+    - numpy
+    - scipy
+    - cgal-boost-gcc5
+    - expat
+    - sparsehash-gcc5
+
+  run:
+    - python
+    - boost1-gcc5
+    - libgcc-5
+    - zlib
+    - numpy
+    - scipy
+    - matplotlib
+    - cgal-boost-gcc5
+    - expat
+    - sparsehash-gcc5
+
+test:
+  imports:
+    - graph_tool
+    - graph_tool.all
+
+about:
+  home: https://graph-tool.skewed.de
+  license: GPLv3
