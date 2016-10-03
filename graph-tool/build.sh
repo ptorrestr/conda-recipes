@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash 
 
 set -x -e
 
@@ -11,7 +11,6 @@ if [ "$(uname)" == "Linux" ]; then
   ./configure \
       --prefix="${PREFIX}" \
       --with-boost="${PREFIX}" \
-      --disable-cairo \
       --enable-openmp \
       CC=${HOST}-gcc \
       CXX=${HOST}-g++ \

@@ -19,6 +19,7 @@ requirements:
     - cgal-boost-gcc5
     - expat
     - sparsehash-gcc5
+    - pycairo
 
   run:
     - python
@@ -31,6 +32,7 @@ requirements:
     - cgal-boost-gcc5
     - expat
     - sparsehash-gcc5
+    - pycairo
 
 test:
   imports:
