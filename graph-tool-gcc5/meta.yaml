@@ -37,10 +37,7 @@ requirements:
     - cairomm
     - pycairo
     - pygobject
-    - freetype
-    - libpng
-    - fontconfig
-    - librsvg
+    - pango
 
 test:
   imports:
