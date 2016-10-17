@@ -23,6 +23,11 @@ requirements:
     - icu               [unix]
     - zlib
 
+test:
+  commands:
+    - conda inspect linkages -p ${PREFIX} boost1-gcc5  # [not win]
+    - conda inspect objects -p ${PREFIX} boost1-gcc5  # [osx]
+
 about:
   home: http://www.boost.org/
   license: Boost-1.0

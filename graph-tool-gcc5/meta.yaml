@@ -11,13 +11,13 @@ requirements:
     - python
     - boost1-gcc5
     - zlib
+    - bzip2
     - gcc-5
     - numpy
     - scipy
     - cgal-boost-gcc5
     - expat
     - sparsehash-gcc5
-    - icu	[unix]
     - cairomm
     - pycairo
 
@@ -26,13 +26,13 @@ requirements:
     - boost1-gcc5
     - libgcc-5
     - zlib
+    - bzip2
     - numpy
     - scipy
     - matplotlib
     - cgal-boost-gcc5
     - expat
     - sparsehash-gcc5
-    - icu	[unix]
     - cairo
     - cairomm
     - pycairo
@@ -43,6 +43,9 @@ test:
   imports:
     - graph_tool
     - graph_tool.all
+  commands:
+    - conda inspect linkages -p ${PREFIX} graph-tool-gcc5  # [not win]
+    - conda inspect objects -p ${PREFIX} graph-tool-gcc5  # [osx]
 
 about:
   home: https://graph-tool.skewed.de
