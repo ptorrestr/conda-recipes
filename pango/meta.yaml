@@ -1,0 +1,43 @@
+package:
+  name: pango
+  version: "1.40.1"
+
+source:
+  fn: pango-1.40.1.tar.xz
+  url: http://ftp.gnome.org/pub/gnome/sources/pango/1.40/pango-1.40.1.tar.xz 
+  sha256: e27af54172c72b3ac6be53c9a4c67053e16c905e02addcf3a603ceb2005c1a40
+
+build:
+    number: 0
+    skip: True  # [win]
+    detect_binary_files_with_prefix: true
+
+requirements:
+  build:
+    - perl
+    - pkg-config
+    - harfbuzz
+    # FIXME: harfbuzz install everything that pango needs, but to avoid issues
+    # with defaults we need to pin against conda-forge versions.
+    - fontconfig 2.11.*
+    - freetype 2.6.*
+    - libpng >=1.6.21,<1.7
+    - gobject-introspection
+    - python >=2.7,<3.0
+  run:
+    - harfbuzz
+    - fontconfig 2.11.*
+    - freetype 2.6.*
+    - libpng >=1.6.21,<1.7
+    - gobject-introspection
+
+test:
+  commands:
+    - pango-view --help
+    - conda inspect linkages -p ${PREFIX} pango  # [not win]
+    - conda inspect objects -p ${PREFIX} pango  # [osx]
+
+about:
+  home: http://www.pango.org 
+  summary: "Pango is a library for laying out and rendering of text, with an emphasis on internationalization. Pango can be used anywhere that text layout is needed, though most of the work on Pango so far has been done in the context of the GTK+ widget toolkit. Pango forms the core of text and font handling for GTK+-2.x."
+
