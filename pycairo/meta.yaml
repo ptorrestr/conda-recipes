@@ -1,0 +1,31 @@
+{% set version = "1.10.0" %}
+
+package:
+  name: pycairo
+  version: {{ version }}
+
+source:
+  fn: pycairo-{{ version }}.tar.bz2
+  url: http://cairographics.org/releases/pycairo-{{ version }}.tar.bz2
+  md5: e6fd3f2f1e6a72e0db0868c4985669c5
+
+build:
+  number: 0
+  skip: True # [win]
+
+requirements:
+  build:
+    - python
+    - cairo
+  run:
+    - python
+    - cairo
+
+test:
+  imports: 
+    - cairo
+
+about:
+  home: http://cairographics.org/pycairo/
+  license: LGPL 3
+  summary: 'Python 3 bindings for cairo.'

@@ -18,8 +18,8 @@ requirements:
     - cgal-boost-gcc5
     - expat
     - sparsehash-gcc5
-    - cairomm
-    - pycairo
+    - cairomm-gcc5
+    - py3cairo
 
   run:
     - python
@@ -33,11 +33,11 @@ requirements:
     - cgal-boost-gcc5
     - expat
     - sparsehash-gcc5
-    - cairo
-    - cairomm
-    - pycairo
-    - pygobject
-    - pango
+    - cairomm-gcc5
+    #- pycairo
+    - gtk3
+    - pygobject3
+    - py3cairo
 
 test:
   imports:
