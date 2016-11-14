@@ -1,0 +1,33 @@
+package:
+  name: hdtconnector
+  version: 0.2.1
+
+source:
+  git_url: https://github.com/ptorrestr/hdt-connector
+  git_rev: 0.2.1
+
+requirements:
+  build:
+    - python
+    - setuptools
+    - boost1-gcc5
+    - zlib
+    - bzip2
+    - gcc-5
+    - hdtcpp
+
+  run:
+    - python
+    - boost1-gcc5
+    - zlib
+    - bzip2
+    - libgcc-5
+    - hdtcpp
+
+test:
+  imports:
+    - hdtconnector.libhdtconnector
+
+about:
+  home: https://github/ptorrestr/hdtconnector
+  license: GPLv3
