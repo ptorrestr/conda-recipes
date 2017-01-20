@@ -8,12 +8,13 @@ source:
 
 requirements:
   build:
-    - gcc-5
+    - gcc-5 # [not osx]
+    - llvm  # [osx]
     - zlib
     - bzip2
 
   run:
-    - libgcc-5
+    - libgcc-5 # [not osx]
     - zlib
     - bzip2
 
