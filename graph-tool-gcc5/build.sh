@@ -7,7 +7,7 @@ LIBRARY_PATH="-L${PREFIX}/lib"
 if [ "$(uname)" == "Linux" ]; then
   ln -s ${PREFIX}/lib ${PREFIX}/lib64
   /bin/bash ./autogen.sh
-  HOST=$(./config.guess)
+  HOST=$(./build/config.guess)
   ./configure \
       --prefix="${PREFIX}" \
       --with-boost="${PREFIX}" \
