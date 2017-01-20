@@ -10,17 +10,18 @@ source:
 requirements:
   build:
     - python
-    - gcc-5
-    - icu               [unix]
-    - bzip2             [unix]
+    - gcc-5   # [not osx]
+    - llvm    # [osx]
+    - icu     # [unix]
+    - bzip2   # [unix]
     - zlib
 
   run:
     # python dependency is here due to libboost-python library that depends on
     # python version
     - python
-    - libgcc-5
-    - icu               [unix]
+    - libgcc-5 # [not osx]
+    - icu      # [unix]
     - zlib
 
 test:
