@@ -35,8 +35,8 @@ if [ "$(uname)" == "Linux" ]; then
   HOST=$(./build/config.guess)
   ./configure \
     --prefix="${PREFIX}" \
-    CC=${HOST}-gcc \
-    CXX=${HOST}-g++ \
+    CC=gcc \
+    CXX=g++ \
     LDFLAGS=${LIBRARY_PATH} \
     CPPFLAGS=${INCLUDE_PATH} \
     PKG_CONFIG_PATH="${PKG_CONFIG_PATH}" \
