@@ -8,7 +8,7 @@ LIBRARY_PATH="-L${PREFIX}/lib"
 if [ "$(uname)" == "Darwin" ]; then
   MACOSX_VERSION_MIN=10.9
   CXXFLAGS="-mmacosx-version-min=${MACOSX_VERSION_MIN}"
-  CXXFLAGS="${CXXFLAGS} -stdlib=libc++ -ftemplate-depth-100 -std=c++11"
+  CXXFLAGS="${CXXFLAGS} -stdlib=libc++ -std=c++11"
   LINKFLAGS="-mmacosx-version-min=${MACOSX_VERSION_MIN}"
   LINKFLAGS="${LINKFLAGS} -stdlib=libc++ -L${LIBRARY_PATH}"
 
