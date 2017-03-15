@@ -1,0 +1,30 @@
+package:
+  name: raptor
+  version: 2.2.0.15
+source:
+  git_url: https://github.com/dajobe/raptor
+  git_rev: master
+build:
+  number: 0
+requirements:
+  build:
+    - libxml2
+    - curl
+    - libxslt
+    - yajl
+    - icu
+    - flex
+    - bison
+  run:
+    - libxml2
+    - curl
+    - libxslt
+    - yajl
+    - icu
+test:
+  commands:
+    - conda inspect linkages -p ${PREFIX} raptor  # [not win]
+    - conda inspect objects -p ${PREFIX} raptor  # [osx] 
+about:
+  home: https://github.com/dajobe/raptor
+  license: Apache2
