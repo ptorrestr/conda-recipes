@@ -1,0 +1,28 @@
+package:
+  name: rasqal
+  version: 0.9.33
+source:
+  git_url: https://github.com/dajobe/rasqal
+  git_rev: master
+build:
+  number: 0
+requirements:
+  build:
+    - raptor
+    - flex
+    - bison
+    - pcre
+    - mpfr
+    - gmp
+  run:
+    - raptor
+    - pcre
+    - mpfr
+    - gmp
+test:
+  commands:
+    - conda inspect linkages -p ${PREFIX} rasqal  # [not win]
+    - conda inspect objects -p ${PREFIX} rasqal  # [osx] 
+about:
+  home: https://github.com/dajobe/raptor
+  license: Apache2
