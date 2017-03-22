@@ -2,7 +2,7 @@ package:
   name: librdf-python-binding
   version: 1.0.18
 source:
-  git_url: https://github.com/dajobe/redland-bindings
+  git_url: https://github.com/ptorrestr/redland-bindings
   git_rev: master
 build:
   number: 0
@@ -16,8 +16,8 @@ requirements:
     - python
     - librdf
 test:
-  imports:
-    - RDF 
+  source_files:
+    - data/dc.rdf
 about:
   home: https://github.com/dajobe/redland-bindings
   license: Apache2

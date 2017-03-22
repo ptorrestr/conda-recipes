@@ -22,11 +22,8 @@ fi
 
 ln -s ${PREFIX}/lib ${PREFIX}/lib64
 
-#./autogen.sh --with-python=$PYTHON --with-python-ldflags="$(python-config --ldflags)" --prefix=$PREFIX
+PYTHON_LDFLAGS=$(python-config --ldflags) ./autogen.sh --with-python=$PYTHON --prefix=$PREFIX
 
-aclocal -I m4 --install
-autoreconf --install --force
-./configure --with-python=$PYTHON --with-python-ldflags="$(python-config --ldflags)"  --prefix=$PREFIX
 make \
   | tee conda.make.log 2>&1
 make install \
