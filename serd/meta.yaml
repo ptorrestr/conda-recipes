@@ -1,0 +1,31 @@
+{% set name = "serd" %}
+{% set version = "0.28.0" %}
+{% set sha256 = "1df21a8874d256a9f3d51a18b8c6e2539e8092b62cc2674b110307e93f898aec" %}
+
+package:
+  name: {{ name | lower }}
+  version: {{ version }}
+
+source:
+  fn: {{ name }}-{{ version }}.tar.bz2
+  url: http://download.drobilla.net/{{ name }}-{{ version }}.tar.bz2
+  sha256: {{ sha256 }}
+
+build:
+  number: 0 
+
+requirements:
+  build:
+    - gcc-6
+
+  run:
+    - libgcc-6
+
+test:
+  commands:
+    - conda inspect linkages -p ${PREFIX} serd  # [not win]
+    - conda inspect objects -p ${PREFIX} serd  # [osx]
+
+about:
+  home: http://drobilla.net/category/serd
+  license: GPLv2
