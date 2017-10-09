@@ -11,8 +11,6 @@ if [ "$(uname)" == "Darwin" ]; then
   CXXFLAGS="${CXXFLAGS} -stdlib=libc++"
   LINKFLAGS="-mmacosx-version-min=${MACOSX_VERSION_MIN}"
   LINKFLAGS="${LINKFLAGS} -stdlib=libc++ -L${LIBRARY_PATH}"
-  CXX=llvm-g++
-	CC=llvm-gcc
   ln -s ${PREFIX}/lib ${PREFIX}/lib64
   /bin/bash ./autogen.sh
   HOST=$(./build/config.guess)
@@ -35,8 +33,6 @@ if [ "$(uname)" == "Linux" ]; then
   HOST=$(./build/config.guess)
   ./configure \
     --prefix="${PREFIX}" \
-    CC=gcc \
-    CXX=g++ \
     LDFLAGS=${LIBRARY_PATH} \
     CPPFLAGS=${INCLUDE_PATH} \
     PKG_CONFIG_PATH="${PKG_CONFIG_PATH}" \
