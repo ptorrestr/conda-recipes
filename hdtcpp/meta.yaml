@@ -14,15 +14,10 @@ build:
 
 requirements:
   build:
-    - autoconf
-    - automake
-    - binutils    # [not osx] 
-    - gcc-6
     - zlib
     - serd
 
   run:
-    - libgcc-6
     - zlib
     - serd
 

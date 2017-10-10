@@ -10,7 +10,7 @@ if [ "$(uname)" == "Darwin" ]; then
   CXXFLAGS="-mmacosx-version-min=${MACOSX_VERSION_MIN}"
   CXXFLAGS="${CXXFLAGS} -stdlib=libc++"
   LINKFLAGS="-mmacosx-version-min=${MACOSX_VERSION_MIN}"
-  LINKFLAGS="${LINKFLAGS} -stdlib=libc++ -L${LIBRARY_PATH}"
+  LINKFLAGS="${LINKFLAGS} -stdlib=libc++ ${LIBRARY_PATH}"
   ln -s ${PREFIX}/lib ${PREFIX}/lib64
   /bin/bash ./autogen.sh
   HOST=$(./build/config.guess)
@@ -20,7 +20,7 @@ if [ "$(uname)" == "Darwin" ]; then
     CPPFLAGS=${INCLUDE_PATH} \
     PKG_CONFIG_PATH="${PKG_CONFIG_PATH}" \
     |  tee conda.configure.log 2>&1
-  make -j$(nproc) \
+  make -j$(sysctl -n hw.ncpu) \
     | tee conda.make.log 2>&1
   make install \
     | tee conda.make-install.log 2>&1
