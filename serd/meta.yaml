@@ -12,14 +12,14 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 0 
+  number: 1 
 
 requirements:
   build:
-    - gcc-6
+    - zlib
 
   run:
-    - libgcc-6
+    - zlib
 
 test:
   commands:
