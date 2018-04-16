@@ -17,6 +17,8 @@ if [ "$(uname)" == "Darwin" ]; then
     LDFLAGS=${LIBRARY_PATH} \
     CPPFLAGS=${INCLUDE_PATH} \
     PKG_CONFIG_PATH="${PKG_CONFIG_PATH}" \
+    CXX=${CXX:-llvm-g++} \
+    CX=${CC:-llvm-gcc} \
     |  tee conda.configure.log 2>&1
   ./waf \
     | tee conda.make.log 2>&1
@@ -32,6 +34,8 @@ if [ "$(uname)" == "Linux" ]; then
     LDFLAGS=${LIBRARY_PATH} \
     CPPFLAGS=${INCLUDE_PATH} \
     PKG_CONFIG_PATH="${PKG_CONFIG_PATH}" \
+    CXX=${CXX:-g++} \
+    CX=${CC:-gcc} \
     |  tee conda.configure.log 2>&1
   ./waf -j$(nproc) \
     | tee conda.make.log 2>&1
