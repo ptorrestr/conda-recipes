@@ -7,10 +7,10 @@ package:
 
 source:
   git_url: https://github.com/ptorrestr/hdt-cpp-1
-  git_rev: develop
+  git_rev: options
 
 build:
-  number: 0
+  number: 1
   script_env:
     - CC
     - CXX
